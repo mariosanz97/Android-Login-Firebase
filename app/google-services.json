@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "77065752437",
+    "firebase_url": "https://login-4ca8d.firebaseio.com",
+    "project_id": "login-4ca8d",
+    "storage_bucket": "login-4ca8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77065752437:android:9fa0f530a4121c90",
+        "android_client_info": {
+          "package_name": "com.example.mario.loginfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77065752437-5e60jtk4grujm29r44f05mk8rl9j66ln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMJEw949Sq2Bco_Z4frxR5wDLhh1oWkC0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
