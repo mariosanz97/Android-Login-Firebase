@@ -1,9 +1,11 @@
 package com.example.mario.loginfirebase;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.LoginFilter;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        if (firebaseAuth.getCurrentUser()!=null){
+            finish();
+            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+        }
+
+
         progressDialog = new ProgressDialog(this);
 
         btnRegister = (Button) findViewById(R.id.buttonregister);
@@ -62,10 +70,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         progressDialog.setMessage("Registering user...");
         progressDialog.show();
+
+
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
+                        finish();
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+
+
                     Toast.makeText(MainActivity.this, "Registered Succescfull", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(MainActivity.this, "Couldnt register, pls try again", Toast.LENGTH_SHORT).show();
@@ -81,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             registerUser();
         }
         if (v == textViewSignip){
-
+startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }
